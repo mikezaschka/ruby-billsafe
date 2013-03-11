@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'billsafe/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "billsafe"
+  gem.name          = "ruby-billsafe"
   gem.version       = Billsafe::VERSION
   gem.authors       = ["Mike Zaschka"]
   gem.email         = ["mike.zaschka@gmail.com"]
