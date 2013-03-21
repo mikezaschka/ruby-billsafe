@@ -53,7 +53,7 @@ module Billsafe
       data = JSON.parse(@response.body)
       raise APIError.new(data['errorList'].
                              map{ |err| [err['code'], err['message']].join(" ")}.join("\r\n")) if data["ack"] == "ERROR"
-      data
+      deflatten_params(data)
     end
 
     def nvp_params(params)
@@ -74,7 +74,19 @@ module Billsafe
     end
 
     def deflatten_params(hash)
-
+      new_hash = {}
+      hash.each_pair do |key, val|
+        if key.include? "_"
+          parts = key.split("_")
+          parts.reverse.each do |part|
+            val = { part => val }
+          end
+        else 
+          val = { key => val }
+        end
+        new_hash.deep_merge!(val)  
+      end        
+      new_hash
     end
 
   end

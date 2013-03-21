@@ -4,13 +4,18 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'billsafe/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "ruby-billsafe"
+  gem.name          = "billsafe"
   gem.version       = Billsafe::VERSION
   gem.authors       = ["Mike Zaschka"]
   gem.email         = ["mike.zaschka@gmail.com"]
   gem.description   = %q{Ruby wrapper for the BillSAFE API}
   gem.summary       = %q{Ruby wrapper for the BillSAFE API}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/mikezaschka/ruby-billsafe"
+  
+  gem.add_development_dependency "rake"
+  gem.add_development_dependency "activesupport"
+  gem.add_development_dependency "rspec"
+  gem.add_development_dependency "webmock"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
