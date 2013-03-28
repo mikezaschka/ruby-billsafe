@@ -9,8 +9,7 @@ module Billsafe
     end
 
     def call(method, attributes)
-      response = Billsafe.request(method, base_attributes.merge(attributes))
-      response
+      Billsafe.request(method, base_attributes.merge(attributes))
     end
 
   end

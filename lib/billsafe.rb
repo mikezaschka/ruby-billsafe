@@ -3,9 +3,9 @@ require 'active_support/all'
 
 module Billsafe
 
-  API_BASE          = "nvp.billsafe.de/"
+  API_BASE          = "nvp.billsafe.de"
   API_BASE_SANDBOX  = "sandbox-nvp.billsafe.de"
-  API_VERSION       = "V208"
+  API_VERSION       = "V209"
 
   PAYMENT_BASE          = "payment.billsafe.de"
   PAYMENT_BASE_SANDBOX  = "sandbox-payment.billsafe.de"
